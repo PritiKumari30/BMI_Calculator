@@ -1,6 +1,3 @@
-// ======================
-// Select Required Elements
-// ======================
 
 const form = document.querySelector("form");
 const result = document.querySelector("#results");
@@ -8,18 +5,10 @@ const historyDiv = document.querySelector("#history");
 const clearBtn = document.querySelector("#clearHistory");
 
 
-// ======================
-// Show History On Page Load
-// ======================
-
 window.addEventListener("load", function () {
     showHistory();
 });
 
-
-// ======================
-// Form Submit Event
-// ======================
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -76,10 +65,6 @@ form.addEventListener("submit", function (e) {
 });
 
 
-// ======================
-// Save History Function
-// ======================
-
 function saveHistory(bmi, category) {
 
     let historyData = JSON.parse(localStorage.getItem("bmiHistory")) || [];
@@ -91,11 +76,6 @@ function saveHistory(bmi, category) {
 
     localStorage.setItem("bmiHistory", JSON.stringify(historyData));
 }
-
-
-// ======================
-// Show History Function
-// ======================
 
 function showHistory() {
 
@@ -111,9 +91,7 @@ function showHistory() {
 }
 
 
-// ======================
 // Clear History Button
-// ======================
 
 clearBtn.addEventListener("click", function () {
     localStorage.removeItem("bmiHistory");
